@@ -1,0 +1,34 @@
+{
+  "name": "Ubuntu",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.14",
+      "installTools": true
+    },
+    "ghcr.io/jsburckhardt/devcontainer-features/ruff:1": {},
+    "ghcr.io/devcontainers-extra/features/mypy:2": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers-extra/features/poetry:2": {
+      "version": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/bin/python3.14"
+      },
+      "extensions": [
+        "ms-python.python",
+        "mhutchie.git-graph",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.vscode-jupyter-cell-tags",
+        "ms-toolsai.vscode-jupyter-powertoys"
+      ]
+    }
+  }
+}
