@@ -1,12 +1,15 @@
 {
   "name": "Ubuntu",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu24.04",
+  "hostRequirements": {
+    "gpu": "optional"
+  },
   "features": {
     "ghcr.io/devcontainers/features/git:1": {
       "version": "latest"
     },
     "ghcr.io/devcontainers/features/python:1": {
-      "version": "3.14",
+      "version": "3.13",
       "installTools": true
     },
     "ghcr.io/jsburckhardt/devcontainer-features/ruff:1": {},
@@ -15,6 +18,8 @@
     },
     "ghcr.io/devcontainers-extra/features/poetry:2": {
       "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/nvidia-cuda:3.0.0": {
     }
   },
   "customizations": {
@@ -32,5 +37,9 @@
     }
   },
   "postCreateCommand": "bash ./.devcontainer/post-create.sh",
-  "remoteUser": "vscode"
+  "remoteUser": "vscode",
+    "runArgs": [
+    "--gpus",
+    "all"
+  ]
 }

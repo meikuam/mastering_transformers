@@ -9,12 +9,10 @@ export PATH="$HOME/.local/bin:$PATH"
 echo "Проверка установки uv..."
 uv --version
 
-# Создание .venv и установка зависимостей
 echo "Создание виртуального окружения и установка зависимостей..."
-uv venv .venv
+uv venv .venv --allow-existing
 echo 'source .venv/bin/activate' >> $HOME/.bashrc
 
-# Установка зависимостей из pyproject.toml (если есть)
 if [ -f "pyproject.toml" ]; then
     echo "Установка зависимостей из pyproject.toml..."
     uv sync --python .venv/bin/python
