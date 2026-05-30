@@ -8,7 +8,9 @@ description = "Development repository for Mastering Transformers book"
 readme = "README.md"
 requires-python = "~=3.13.0"
 dependencies = [
+    "gensim>=4.4.0",
     "jupyterlab>=4.5.7",
+    "matplotlib>=3.10.9",
     "nltk>=3.9.4",
     "pandas>=3.0.3",
     "scikit-learn>=1.8.0",
